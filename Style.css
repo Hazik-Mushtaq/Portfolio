@@ -24,10 +24,7 @@
 }
 
 @media (max-width: 600px) {
-.Links{
-    font-size: 0.6rem !important;
-    padding: o.2rem 0.3rem !important;
-}
+
 .profile{
     height: 150px !important;
     width: 150px !important;
@@ -83,31 +80,6 @@ header{
 
 }
 
-.Links{
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-wrap: nowrap;
-    text-decoration: none;
-    justify-content: center;
-    font-size: 0.9rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: var(--text-color);
-    transition: transform 0.7s ease-in-out;
-    letter-spacing: 0.5px;
-    
-}
-
-.Links:first-child{
-    font-size: 0.9rem;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    /* background: linear-gradient(80deg, #2525, #00eeff, #00acee, #007bff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.8 ease; */
-}
-
 .Links:hover{
     color: #000;
     /* color: var(--main-color);
@@ -115,61 +87,18 @@ header{
     transition: all 0.8s ease, transform 0.7s ease;
     transform: scale(1.05);
 }
-.navBtn {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    padding: 0 2%;
-    border-radius: 1rem;
-    background: var(--bg-color);
-    /* box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
-    inset -5px -5px 4px #222; */
-
-    box-shadow: 4px 4px 10px #000, -4px -4px 10px #353535,
-    inset -2px -2px 4px #353535,inset 2px 2px 4px #000;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .navBtn:hover::before {
-    transform: scaleX(1);
-  }
-  
-  /* .button-content {
-    position: relative;
-    z-index: 1;
-  } */
-  
-  .navBtn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    width: 100%;
-    height: inherit;
-    border-radius: inherit;
-    background: linear-gradient(
-      82.3deg,
-      var(--main-color) 10.8%,
-      rgba(29, 217, 235, 0.845) 94.3%
-    );
-    filter: blur(3px);
-    transition: all 0.475s;
-  }
   
 #navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* gap: 1%; */
-    /* padding: 0.4rem; */
+    /* border: 1px dashed rgb(81, 80, 80); */
+    gap: 1%;
+    padding: 0.2rem;
     border-radius: 20px;
     width: 92vw;
     height: 4rem;
-    border: none;
+    /* border: none; */
     box-shadow: 4px 4px 10px var(--shadow-lower), -2px -4px 6px var(--shadow-upper);
     color: var(--text-color);
     
@@ -179,7 +108,70 @@ header{
     inset -2px -2px 4px #353535,inset 2px 2px 4px #000;
 } */
 
+/*_______________________________ Navbar Buttons __________________________________*/
+.navBtn {
+  transition: all 0.8s ease;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  width: inherit;
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 1rem;
+  font-size: 90%;
+  box-shadow: 4px 4px 10px var(--shadow-lower), -2px -4px 6px var(--shadow-upper);
+    color: var(--text-color);
+  /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); */
+  background: radial-gradient(
+    ellipse at bottom,
+    #00eeff1c 0%,
+    var(--bg-color) 45%
+  );
 
+  color: #00eeffa4;
+
+  transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.navBtn::before {
+  content: "";
+  width: 70%;
+  height: 1px;
+
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+
+  background: var(--main-color);
+  background: linear-gradient(
+    90deg,
+    var(--bg-color) 0%,
+    var(--main-color) 50%,
+    var(--bg-color) 100%
+  );
+  opacity: 0.1;
+
+  transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.navBtn:hover {
+  color: var(--main-color);
+  transform: scale(0.96);
+  background: radial-gradient(
+    ellipse at bottom,
+    #00eeff31 0%,
+    var(--bg-color) 45%);
+    transition: all 0.8s ease;
+    box-shadow: 4px 4px 10px #000, -4px -4px 10px #353535,
+    inset -2px -2px 4px #353535,inset 2px 2px 4px #000;
+  
+}
+
+.navBtn:hover::before {
+  opacity: 1;
+}
+/*------------------------------- Navbar Buttons End ----------------------------------*/
 
 .mbody{
     /* display: flex; */
@@ -467,62 +459,3 @@ img{
     10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% { width: 14%; }
     5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% { width: calc(100% + 80px); }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.card {
-    height: 35rem;
-    width: 27rem;
-    /* border-left: 2px dotted red; */
-    /* border-right: 2px dotted aqua; */
-    transition: transform 0.7s ease-in-out;
-    box-shadow: 4px 4px 10px #000, -2px -4px 10px #353535;
-                     
-  }
-  
-  .socialbar {
-    background-color: #252525;
-    border-radius: 3em;
-    color: white;
-    box-shadow: 3px 3px 15px rgb(0, 0, 0),
-                     -3px -3px 15px rgb(58, 58, 58);
-    display: flex;
-    justify-content: space-evenly;
-        
-    height: 5rem;
-    width: 380px;
-    margin: 1.5rem;
-  }
-  
-  .card a {
-    transition: 0.4s;
-    color: rgb(0, 255, 229);
-  }
-  
-  #github:hover {
-    color: #c9510c;
-  }
-  
-  #instagram:hover {
-    color: #d62976;
-  }
-  
-  #facebook:hover {
-    color: #3b5998;
-  }
-  
-  #twitter:hover {
-    color: #00acee;
-  }
