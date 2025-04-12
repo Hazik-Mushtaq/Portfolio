@@ -164,12 +164,42 @@ header {
   box-shadow: 4px 4px 10px var(--shadow-lower), -2px -4px 6px var(--shadow-upper);
   flex-grow: 1;
 }
-.Profile-Social{
-  height: auto;
+
+.Profile-Social-Container{
+  height: 70%;
   max-width: 100%;
 }
+.Icon-Container{
+  z-index: 2;
+  height: 54%;
+  width: 92%;
+  border-radius: 20px 300px 300px 300px;
+  box-shadow: 4px 4px 10px var(--shadow-lower), -2px -4px 6px var(--shadow-upper);
+  position: absolute;
+  transition: all 0.7s ease-in-out;
+  top: 2.5%;
+  left: 4%;
+  transform-origin: top left;
+  backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    justify-content: flex-start;
+}
+.Icons{
+  height: 3rem;
+  width:3rem;
+  background-color: var(--shadow-lower);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-brands{
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
 img {
-  z-index: 1;
   height: auto;
   max-width: 100%;
   display: block;
@@ -190,7 +220,7 @@ img {
   transition: all 1s ease;
   transform: scale(0.9);
   border: none;
-  border-radius: 150px 200px 1000px 200px;
+  border-radius: 150px 200px 2000px 200px;
   align-items: flex-start;
   filter: blur(0px);
   box-shadow: 4px 4px 10px #000, -4px -4px 10px #353535,
@@ -205,11 +235,7 @@ img {
   align-self: flex-end;
 } */
 
-.fa-x-twitter{
-  font-size: 40px;
-  color: var(--main-color);
 
-}
 
 @keyframes slide-in-top {
   0% {
@@ -252,6 +278,7 @@ img {
 
 .btn {
   display: inline-block;
+  text-decoration: none;
   padding: 1rem 2.8rem;
   background: var(--main-color);
   box-shadow: 0 0 25px var(--main-color);
