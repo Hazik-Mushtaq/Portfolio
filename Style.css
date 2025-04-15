@@ -9,7 +9,7 @@
   --text-color: rgb(161, 161, 161);
   --main-color: #00eeff;
   --color1: rgb(9, 164, 230);
-
+  --MNFcolor: rgba(255, 255, 255, 0.827);
   /* border-shadows */
   --shadow-lower: #000;
   --shadow-upper: #353535;
@@ -194,7 +194,8 @@ header {
 }
 
 .card:hover .logo-svg {
-  border-radius: 300px 20px 300px 300px;
+  border-radius: 280px 45px 300px 300px;
+
   transition: all 0.7s ease;
 }
 
@@ -507,8 +508,16 @@ header {
 
 
 
-/* @media (max-width: 600px) {
-
+@media (max-width: 600px) {
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  body{
+    margin: 1px;
+    height: inherit;
+    width: 100%;
+  }
   .profile {
     height: 150px !important;
     width: 150px !important;
@@ -516,12 +525,15 @@ header {
   }
 
   .mbody {
-    padding-left: 0% !important;
+    margin-top: 0.7rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .textpart {
     padding-left: 0rem !important;
-    padding-top: 3rem !important;
+    height: auto;
+    width: 100%;
     font-size: 9px;
   }
 
@@ -531,13 +543,39 @@ header {
     border-radius: 200px 20px 200px 200px !important;
   }
 
-  #navbar {
-    width: 23rem !important;
-    height: 8px !important;
+  header{
+    padding: 0.5rem;
+  }
+  #navbar{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0;
+    height: 2.3rem;
+    width: 100%;
+    border-radius: 5px;
+    padding: 1px;
 
   }
-} */
+  .navBtn {
+    letter-spacing: 0.2px;
+    width: 5rem;
+    height: 2.4rem;
+    font-size: 0.4rem;
+    color: var(--MNFcolor);
+    background: linear-gradient(90deg, var(--main-color), var(--shadow-upper));
+  }
 
+
+
+  /* Animation section */
+    .text-animation {
+      font-size: 1.3rem !important;
+}
+.btn{
+  height: 4px;
+  width: auto;
+}
+}
 
 
 
