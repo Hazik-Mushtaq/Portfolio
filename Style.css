@@ -4,7 +4,9 @@
 }
 
 :root {
-  --bg-color: #252525;
+  /* #252525 */
+  --bg-color: rgb(37, 42, 47);
+  --bg-color1: rgb(37, 42, 47);
   --second-bg-color: #131313;
   --text-color: rgb(161, 161, 161);
   --main-color: #00eeff;
@@ -24,14 +26,14 @@
 
 body {
   background: var(--bg-color);
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 97vh;
   width: 98vw;
   margin-top: 0.8rem;
   margin-left: 0.8rem;
   border-radius: 15px;
   box-shadow: 4px 4px 10px var(--shadow-lower), -2px -4px 6px var(--shadow-upper);
-  transition: box-shadow 0.6s ease-in-out;
+  transition: all 0.6s ease;
 }
 
 body:hover {
@@ -80,6 +82,7 @@ header {
   border: 0;
   border-radius: inherit;
   font-size: 95%;
+  font-family: "SF Pro Text", "SF Pro Icons";
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: #00eeff6e;
@@ -105,7 +108,7 @@ header {
   transition: all 0.5s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
-.navBtn:hover{
+.navBtn:hover {
   color: var(--main-color);
   /* transform: scale(0.97); */
   background: radial-gradient(ellipse at bottom, #00eeff31 0%, var(--bg-color) 45%);
@@ -120,7 +123,7 @@ header {
 
 /*------------------------------- Navbar Buttons End ----------------------------------*/
 
-  /*_______________________________ Navbar Buttons __________________________________*/
+/*_______________________________ Main Body __________________________________*/
 .mbody {
   display: flex;
   gap: 1.5%;
@@ -150,7 +153,6 @@ header {
   flex-grow: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .profile {
@@ -160,7 +162,7 @@ header {
   padding: 2%;
   padding-left: 1.5%;
   border-radius: inherit;
-  /* border-left: 2px dotted red; */
+  /* border-left: 2px dotted   red; */
   /* border-right: 2px dotted aqua; */
   transition: all 1s ease-in-out;
   box-shadow: 4px 4px 10px var(--shadow-lower), -2px -4px 6px var(--shadow-upper);
@@ -177,6 +179,7 @@ header {
   border-right: 2px dotted aqua;
   overflow: hidden;
   transition: all 1s ease-in-out;
+  perspective: 1000px;
 }
 
 /* .logo {
@@ -191,6 +194,7 @@ header {
   width: 100%;
   height: 100%;
   transition: all 0.8s ease;
+  transform: translateZ(20px);
 }
 
 .card:hover .logo-svg {
@@ -286,7 +290,7 @@ header {
   bottom: -65%;
   left: -65%;
   transition-delay: 0.4s;
-  color: #00eeff;
+  color: var(--main-color);
 }
 
 /* .box3::before {
@@ -319,11 +323,11 @@ header {
   left: -2px;
 }
 
-.card:hover .logo {
+.card:hover .logo-svg {
   /* transform: translate(0,);
   bottom: 20px;
   right: 20px; */
-  /* filter: blur(3px); */
+  filter: blur(3px);
 }
 
 /* ____________________________Main Body End______________________________ */
@@ -336,7 +340,7 @@ header {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .home-content h3 {
@@ -346,10 +350,11 @@ header {
 }
 
 .home-content p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 2;
+  line-height: 1.5;
   width: 100%;
+  text-align: justify;
 }
 
 .btn {
@@ -366,16 +371,15 @@ header {
   font-weight: 600;
   transition: 0.3s ease-in-out;
   cursor: pointer;
-
   /* 
     margin: 12px;
   height: 50px;
   width: 120px;
   border-radius: 10px; */
-  background: #333;
+  background: var(--bg-color);
   /* justify-content: center;
   align-items: center; */
-  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
+  box-shadow: -5px -5px 17px #3b3b3b, 5px 5px 15px #222, inset 5px 5px 10px #444,
     inset -5px -5px 10px #222;
   font-family: "Damion", cursive;
   cursor: pointer;
@@ -420,10 +424,11 @@ header {
 
 .text-animation span::after {
   content: "";
-  background: #252525;
+  background: var(--bg-color);
   position: absolute;
-  width: calc(75% + 300px);
+  width: calc(70% + 300px);
   height: 100%;
+  padding-left: 5px;
   border-left: 3px solid var(--bg-color);
   right: -80px;
   animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
@@ -497,56 +502,65 @@ header {
 
 
 
-
-
-
-
-
-
-
-
-
-
+/* For Mobile Responsiveness */
 
 @media (max-width: 600px) {
-  *{
+  * {
     padding: 0;
     margin: 0;
   }
-  body{
-    margin: 1px;
-    height: inherit;
+
+  body {
+    margin: 0%;
     width: 100%;
+    height: 100vh;
+    margin: 0%;
   }
+
   .profile {
-    height: 150px !important;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 12rem !important;
+    margin-left: -0.1rem;
+    /* height: 150px !important;
     width: 150px !important;
-    border-radius: 150px 20px 150px 150px !important;
+    border-radius: 150px 20px 150px 150px !important; */
+  }
+
+  .card {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .logo-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 160px;
+    object-fit: contain;
   }
 
   .mbody {
     margin-top: 0.7rem;
+    margin-left: 0.6rem;
     display: flex;
     flex-direction: column;
   }
 
   .textpart {
-    padding-left: 0rem !important;
-    height: auto;
-    width: 100%;
-    font-size: 9px;
+    width: 100% !important;
+    height: 16rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
   }
 
-  img {
-    height: 150px !important;
-    width: 150px !important;
-    border-radius: 200px 20px 200px 200px !important;
-  }
-
-  header{
+  header {
     padding: 0.5rem;
   }
-  #navbar{
+
+  #navbar {
     display: flex;
     justify-content: space-evenly;
     margin-top: 0;
@@ -556,6 +570,7 @@ header {
     padding: 1px;
 
   }
+
   .navBtn {
     letter-spacing: 0.2px;
     width: 5rem;
@@ -565,17 +580,44 @@ header {
     background: linear-gradient(90deg, var(--main-color), var(--shadow-upper));
   }
 
-
-
   /* Animation section */
-    .text-animation {
-      font-size: 1.3rem !important;
-}
-.btn{
-  height: 4px;
-  width: auto;
-}
-}
+  .text-animation {
+    font-size: 1.2rem !important;
+  }
 
+  .text-animation span::after {
+    content: "";
+    background: #252525;
+    position: absolute;
+    width: calc(70% + 300px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -70px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+  }
+  .home-content h3 {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  font-size: 1rem;
+  }
 
+  .home-content p {
+    font-size: 0.8rem;
+  }
 
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0.7rem;
+    width: 1rem;
+    font-size: small;
+
+  }
+
+  .btn-group {
+    top: 16rem;
+    position: relative;
+  }
+
+}
