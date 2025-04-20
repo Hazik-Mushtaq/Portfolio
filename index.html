@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  
+ 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio</title>
   <link rel="stylesheet" href="Style.css">
-  <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
+  <!-- <link href='https://unpkag.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,33 +15,35 @@
 </head>
 
 <body>
-
+  <button class="NavCntrl" id="open-slide-bar" onclick="opensidebar()"><i class="fa-solid fa-bars"></i></button>
   <header> <!--Header Section-->
-    <nav id="navbar">
+    <nav id="navbar" class="show">
+      <button class="NavCntrl" id="close-slide-bar" onclick="closesidebar()"><i class="fa-solid fa-xmark"></i></button>
       <a class="navBtn" href="">
         HAZIK MUSHTAQ
       </a>
 
-      <a class="navBtn" href="">
+      <a class="navBtn NB" href="">
         Home
       </a>
 
-      <a class="navBtn" href="">
+      <a class="navBtn NB" href="">
         Projects
       </a>
 
-      <a class="navBtn" href="">
+      <a class="navBtn NB" href="">
         Download Resume
       </a>
 
-      <a class="navBtn" href="">
+      <a class="navBtn NB" href="">
         About
       </a>
 
-      <a class="navBtn" href="">
+      <a class="navBtn NB" href="">
         Theme
       </a>
     </nav>
+    
   </header>
   <div class="mbody">
     <div class="textpart">
@@ -93,13 +95,22 @@
             </svg></span></div>
         <div class="box box4"><i class="fa-brands fa-linkedin-in"></i></div>
       </div>
-      <!-- <div class="quotesection"></div> -->
+      <fieldset class="quotesection">
+        <legend>
+          <!-- &lt;/HazikMushtaq&gt; -->
+          <div class="terminal-controls">
+          <div class="control close"></div>
+          <div class="control minimize"></div>
+          <div class="control maximize"></div>
+        </div></legend>
+        This site isn't generated.<br>It's crafted, <br>line by line, <br>with love...
+      </fieldset>
     </div>
   </div>
 
   </div>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>

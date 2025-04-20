@@ -1,12 +1,10 @@
 
-  const navBtns = document.querySelectorAll('.navBtn');
+  const navbar = document.getElementById('navbar');
 
-  navBtns.forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      // Optional: prevent the link from jumping if you’re not navigating
-      // e.preventDefault(); 
+function opensidebar(){
+  navbar.classList.add('show')
+}
 
-      navBtns.forEach(b => b.classList.remove('active')); // remove active from all
-      this.classList.add('active'); // set active on clicked one
-    });
-  });
+function closesidebar(){
+  navbar.classList.remove('show')
+}

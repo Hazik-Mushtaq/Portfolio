@@ -1,6 +1,7 @@
 * {
   padding: 0%;
   margin: 0%;
+  box-sizing: border-box;
 }
 
 :root {
@@ -8,10 +9,10 @@
   --bg-color: rgb(37, 42, 47);
   --bg-color1: rgb(37, 42, 47);
   --second-bg-color: #131313;
-  --text-color: rgb(161, 161, 161);
-  --main-color: #00eeff;
-  --color1: rgb(9, 164, 230);
-  --MNFcolor: rgba(255, 255, 255, 0.827);
+  --text-color: rgb(187, 183, 183);
+  --main-color: rgb(9, 164, 230);
+  /* --color1: rgb(9, 164, 230); */
+  --MNFcolor: rgba(255, 255, 255, 0.72);
   /* border-shadows */
   --shadow-lower: #000;
   --shadow-upper: #353535;
@@ -28,7 +29,9 @@ body {
   background: var(--bg-color);
   /* overflow: hidden; */
   height: 97vh;
+  min-height: auto;
   width: 98vw;
+  min-width: 140px;
   margin-top: 0.8rem;
   margin-left: 0.8rem;
   border-radius: 15px;
@@ -81,13 +84,13 @@ header {
   cursor: pointer;
   border: 0;
   border-radius: inherit;
-  font-size: 95%;
-  font-family: "SF Pro Text", "SF Pro Icons";
+  font-size: 80%;
+  font-family: Poppins, "Segoe UI", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  color: #00eeff6e;
+  color: rgba(9, 164, 230, 0.538);
   background: radial-gradient(ellipse at bottom,
-      #1d81881c 0%,
+      rgba(9, 164, 230, 0.089) 0%,
       var(--bg-color) 45%);
   transition: all 0.5s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
@@ -96,7 +99,7 @@ header {
   content: "";
   width: 70%;
   height: 1px;
-
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: absolute;
   bottom: 0;
   left: 15%;
@@ -111,7 +114,7 @@ header {
 .navBtn:hover {
   color: var(--main-color);
   /* transform: scale(0.97); */
-  background: radial-gradient(ellipse at bottom, #00eeff31 0%, var(--bg-color) 45%);
+  background: radial-gradient(ellipse at bottom, #00aeff1b 0%, var(--bg-color) 45%);
   box-shadow: inset -2px -2px 6px #353535, inset 4px 4px 6px #000000ab;
   transition: all 0.3s ease;
 }
@@ -159,8 +162,7 @@ header {
   position: relative;
   width: 20%;
   height: 100%;
-  padding: 2%;
-  padding-left: 1.5%;
+  padding: 2vh;
   border-radius: inherit;
   /* border-left: 2px dotted   red; */
   /* border-right: 2px dotted aqua; */
@@ -176,7 +178,7 @@ header {
   /* background: lightgrey; */
   border-radius: 280px 45px 300px 300px;
   border-left: 2px dotted red;
-  border-right: 2px dotted aqua;
+  border-right: 2px dotted var(--main-color);
   overflow: hidden;
   transition: all 1s ease-in-out;
   perspective: 1000px;
@@ -324,10 +326,68 @@ header {
 }
 
 .card:hover .logo-svg {
-  /* transform: translate(0,);
-  bottom: 20px;
-  right: 20px; */
   filter: blur(3px);
+}
+
+/* Quote Section */
+
+.control {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.4em;
+  border-radius: 50%;
+  background-color: #777;
+}
+
+.control.close {
+  background-color: #e33;
+}
+
+.control.minimize {
+  background-color: rgb(238, 202, 0);
+}
+
+.control.maximize {
+  background-color: #0b0;
+}
+
+.quotesection {
+  margin-top: 3vh;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 11rem;
+  min-height: 1vh;
+  border: none;
+  border-radius: 1rem;
+  box-shadow:
+    inset -2px -2px 4px #353535, inset 2px 2px 10px #000;
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 500;
+  font-size: 1vw;
+  padding: 0.1vh 0.9vh 1vh 3vh;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+}
+
+legend {
+  /* padding-right: 5px; */
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow:
+    inset -2px -2px 2px #353535, inset 2px 2px 10px #000;
+  color: var(--main-color);
+  background-color: var(--bg-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+  width: 3rem;
+  border-radius: 0.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /* ____________________________Main Body End______________________________ */
@@ -337,10 +397,9 @@ header {
 }
 
 .home-content {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 8vh;
 }
 
 .home-content h3 {
@@ -358,7 +417,7 @@ header {
 }
 
 .btn {
-  display: inline-block;
+  /* display: inline-block; */
   text-decoration: none;
   padding: 1rem 2.8rem;
   background: var(--main-color);
@@ -442,7 +501,7 @@ header {
 
 @keyframes words {
 
-  0%,
+  -0%,
   20% {
     content: "Tech Enthusiast & Learner";
   }
@@ -492,7 +551,7 @@ header {
   65%,
   80%,
   85% {
-    width: calc(100% + 80px);
+    width: calc(100% + 5rem);
   }
 }
 
@@ -500,7 +559,11 @@ header {
 
 
 
-
+.NavCntrl {
+  visibility: hidden;
+  display: none;
+  background: none;
+}
 
 /* For Mobile Responsiveness */
 
@@ -514,51 +577,105 @@ header {
     margin: 0%;
     width: 100%;
     height: 100vh;
-    margin: 0%;
+    min-width: 180px;
+  }
+
+  body:hover {
+    box-shadow: 2px 2px 5px var(--shadow-lower), -2px -2px 3px var(--shadow-upper),
+      inset -1px -1px 2px var(--shadow-upper), inset 1px 1px 5px var(--shadow-lower);
+    transition: box-shadow 0.2s ease-in-out;
   }
 
   .profile {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     justify-content: center;
     width: 100%;
     height: 12rem !important;
-    margin-left: -0.1rem;
     /* height: 150px !important;
     width: 150px !important;
     border-radius: 150px 20px 150px 150px !important; */
   }
 
-  .card {
-    height: 10rem;
+  .quotesection {
+    margin-top: 0;
     width: 10rem;
+  }
+
+  .card {
+    /* width: 15rem;
+    height: 15rem;
+    display: block; */
+    width: 12rem;
+    min-width: 140px;
+    height: 12rem;
+    min-height: 140px;
   }
 
   .logo-svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 160px;
-    object-fit: contain;
+    height: 105%;
+    width: 200px;
+    object-fit: cover;
   }
 
   .mbody {
-    margin-top: 0.7rem;
-    margin-left: 0.6rem;
+    margin-top: 2.8rem;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
   }
 
   .textpart {
-    width: 100% !important;
-    height: 16rem;
+    width: 100%;
+    height: 5rem;
     font-size: 1rem;
     border-radius: 0.5rem;
+  }
+
+  .home {
+    height: 6rem !important;
   }
 
   header {
     padding: 0.5rem;
   }
+
+  .NavCntrl {
+    visibility: visible;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border: none;
+  }
+
+  #open-slide-bar {
+    position: fixed;
+    right: 0.3rem;
+    top: 0.3rem;
+  }
+
+  #close-slide-bar {
+    z-index: 1;
+    position: absolute;
+    right: 0.3rem;
+    top: 0.3rem;
+    padding: 0;
+  }
+
+  .fa-solid {
+    font-size: 2.5rem;
+    color: var(--MNFcolor);
+  }
+
+  .fa-xmark {
+    font: 4rem;
+  }
+
 
   #navbar {
     display: flex;
@@ -575,34 +692,162 @@ header {
     letter-spacing: 0.2px;
     width: 5rem;
     height: 2.4rem;
-    font-size: 0.4rem;
-    color: var(--MNFcolor);
-    background: linear-gradient(90deg, var(--main-color), var(--shadow-upper));
+    font-size: 0.38rem;
+  }
+
+
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    position: fixed;
+    top: 0.2rem;
+    right: 1;
+    bottom: 0.2rem;
+    gap: 1rem;
+    height: 99vh;
+    border-radius: 0.5rem;
+    width: min(15em, 100%);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px 10px var(--shadow-lower), -4px -4px 6px var(--shadow-upper);
+    z-index: 10;
+    right: -100%;
+    transition: all 0.8s ease;
+  }
+
+  #navbar.show {
+    right: 0%;
+  }
+
+  #navbar .NB {
+    height: 3rem;
+    margin: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 60%;
+    border-radius: 0.8rem;
+    transition: all 0.2s ease-in-out;
+
+  }
+
+  .home-content {
+    gap: 0.5rem;
   }
 
   /* Animation section */
-  .text-animation {
-    font-size: 1.2rem !important;
+  .home-content {
+    font-size: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .text-animation span::after {
-    content: "";
-    background: #252525;
-    position: absolute;
-    width: calc(70% + 300px);
-    height: 100%;
-    border-left: 3px solid var(--bg-color);
-    right: -70px;
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
-  }
   .home-content h3 {
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  font-size: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: 1vw;
   }
 
   .home-content p {
     font-size: 0.8rem;
+  }
+
+
+
+  .text-animation {
+    font-size: 1rem !important;
+    font-weight: 600;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .text-animation span {
+    position: relative;
+  }
+
+  .text-animation span::before {
+    content: "web developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+    filter: blur(1px);
+  }
+
+  .text-animation span::after {
+    content: "";
+    background: var(--bg-color);
+    position: absolute;
+    width: calc(70% + 300px);
+    height: 100%;
+    padding-left: 5px;
+    border-left: 3px solid var(--bg-color);
+    right: -80px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+  }
+
+  @keyframes cursor {
+    to {
+      border-left: 3px solid var(--main-color);
+    }
+  }
+
+  @keyframes words {
+
+    0%,
+    20% {
+      content: "Tech Enthusiast & Learner";
+    }
+
+    21%,
+    40% {
+      content: "Javascript Developer";
+    }
+
+    41%,
+    60% {
+      content: "React Developer";
+    }
+
+    61%,
+    80% {
+      content: "Web Developer";
+    }
+
+    81%,
+    100% {
+      content: "Frontend Designer";
+    }
+  }
+
+  @keyframes typing {
+
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+      width: 14%;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+      width: calc(100% + 4.5rem);
+    }
   }
 
   .btn {
