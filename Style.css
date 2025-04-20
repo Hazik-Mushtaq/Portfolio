@@ -59,8 +59,8 @@ header {
   align-items: center;
   /* border: 1px dashed rgb(81, 80, 80); */
   gap: 1%;
-  padding: 0.2% 0.2% 0% 0.2%;
-  border-radius: 20px;
+  padding: 0.2% 0.2% 0.1% 0.2%;
+  border-radius: 10px;
   width: 92vw;
   height: 4rem;
   box-shadow: 4px 4px 10px var(--shadow-lower), -2px -4px 6px var(--shadow-upper);
@@ -88,33 +88,36 @@ header {
   font-family: Poppins, "Segoe UI", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  color: rgba(9, 164, 230, 0.538);
+  /* color: rgba(9, 164, 230, 0.538); */
   background: radial-gradient(ellipse at bottom,
       rgba(9, 164, 230, 0.089) 0%,
       var(--bg-color) 45%);
   transition: all 0.5s cubic-bezier(0.15, 0.83, 0.66, 1);
+  color: rgba(202, 226, 253, 0.678);
+  
 }
 
 .navBtn::before {
   content: "";
   width: 70%;
-  height: 1px;
+  height: 1.5px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: absolute;
   bottom: 0;
   left: 15%;
 
-  background: var(--main-color);
-  background: linear-gradient(90deg, var(--bg-color) 0%, var(--main-color) 50%, var(--bg-color) 100%);
+  background:  rgba(202, 226, 253, 0.678);
+  background: linear-gradient(90deg, var(--bg-color) 0%, rgba(202, 226, 253, 0.678) 50%, var(--bg-color) 100%);
   opacity: 0.1;
 
   transition: all 0.5s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
 .navBtn:hover {
-  color: var(--main-color);
+  color: rgb(202, 226, 253);
   /* transform: scale(0.97); */
-  background: radial-gradient(ellipse at bottom, #00aeff1b 0%, var(--bg-color) 45%);
+  text-shadow: 0px 0px 10px #cae2fda9;
+  background: radial-gradient(ellipse at bottom, rgba(202, 226, 253, 0.17) 0%, var(--bg-color) 45%);
   box-shadow: inset -2px -2px 6px #353535, inset 4px 4px 6px #000000ab;
   transition: all 0.3s ease;
 }
@@ -463,8 +466,9 @@ legend {
   gap: 1.5rem;
 }
 
+/* animation font  */
 .text-animation {
-  font-size: 2.5rem !important;
+  font-size: 3vw !important;
   font-weight: 600;
   width: 100%;
   overflow: hidden;
@@ -717,7 +721,7 @@ legend {
   }
 
   #navbar.show {
-    right: 0%;
+    right: 0;
   }
 
   #navbar .NB {
@@ -866,3 +870,11 @@ legend {
   }
 
 }
+
+
+
+
+
+
+
+
