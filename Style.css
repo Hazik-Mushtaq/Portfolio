@@ -636,7 +636,7 @@ legend {
 
  .textpart {
     width: 100%;
-    height: 19rem !important;
+    height: 17rem !important;
     font-size: 1rem;
     border-radius: 0.5rem 6rem 0.5rem 0.5rem;
   }
@@ -646,7 +646,8 @@ legend {
       font-size: 3vw;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      gap: 1rem;
     }
   
     .home-content h3 {
@@ -739,7 +740,8 @@ legend {
     border-radius: 4rem 0.5rem 0.5rem 0.5rem;
     width: min(15em, 100%);
     background-color: var(--bg-color);
-    box-shadow: 4px 4px 10px var(--shadow-lower), -4px -4px 6px var(--shadow-upper);
+    /* box-shadow: 4px 4px 10px var(--shadow-lower), -4px -4px 6px var(--shadow-upper); */
+    box-shadow: none;
     z-index: 10;
     right: -100%;
     transition: all 0.8s ease;
@@ -777,9 +779,9 @@ legend {
 
 
   .text-animation {
-    font-size: 1rem !important;
+    font-size: 4vw !important;
     font-weight: 600;
-    width: 100%;
+    width: 90%;
     overflow: hidden;
   }
 
@@ -869,20 +871,25 @@ legend {
   }
 
   .btn {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 0.7rem;
-    width: 1rem;
-    font-size: small; */
-    
+    padding:8px;
+  font-size: 2vw;
+  color: rgb(161, 161, 161);
+  transition: 1000ms;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
   .btn-group {
     /* top: 16rem;
     position: relative; */
-    display: block;
-    visibility: hidden;
+    /* display: block;
+    visibility: hidden; */
+    margin-top: 1rem;
+    width: 100%;
+    height: 2.5rem;
   }
 
 }
