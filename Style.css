@@ -737,7 +737,7 @@ legend {
     bottom: 0.2rem;
     gap: 1rem;
     height: 99vh;
-    border-radius: 4rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 0.5rem;
     width: min(15em, 100%);
     background-color: var(--bg-color);
     /* box-shadow: 4px 4px 10px var(--shadow-lower), -4px -4px 6px var(--shadow-upper); */
@@ -872,7 +872,7 @@ legend {
 
   .btn {
     padding:8px;
-  font-size: 2vw;
+  font-size: 1.2vh;
   color: rgb(161, 161, 161);
   transition: 1000ms;
   width: 4.5rem;
