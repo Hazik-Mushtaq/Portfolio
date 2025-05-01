@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0%;
   margin: 0%;
@@ -12,7 +16,7 @@
   --text-color: rgb(187, 183, 183);
   --main-color: rgb(9, 164, 230);
   /* --color1: rgb(9, 164, 230); */
-  /* --MNFcolor: rgba(255, 255, 255, 0.72); */
+  --MNFcolor: rgba(255, 255, 255, 0.72);
   --navbtn-first-Txtcolor: rgba(202, 226, 253, 0.678);
   /* border-shadows */
   --shadow-lower: #000;
@@ -20,10 +24,12 @@
 }
 
 .light-theme {
-  --bg-color: #ffffff;
+  --bg-color: #e0e0e0;
   --second-bg-color: #f0f0f0;
   --text-color: #000000;
   --main-color: #007bff;
+  --shadow-lower: #bebebe;
+  --shadow-upper: #ffffff;
 }
 
 body {
@@ -49,8 +55,8 @@ body:hover {
 header {
   display: flex;
   justify-content: center;
-  padding: 2rem 2rem;
-
+  padding: 2rem 2rem 1rem 2rem;
+  /* position: fixed; */
 }
 
 /*_______________________________ Navbar Buttons __________________________________*/
@@ -68,8 +74,8 @@ header {
 
 }
 
-#FirstBtn{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+#FirstBtn {
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -94,7 +100,7 @@ header {
       var(--bg-color) 45%);
   transition: all 0.5s cubic-bezier(0.15, 0.83, 0.66, 1);
   color: var(--navbtn-first-Txtcolor);
-  
+
 }
 
 .navBtn::before {
@@ -118,7 +124,7 @@ header {
   /* transform: scale(0.97); */
   text-shadow: 0px 0px 10px #cae2fda9;
   background: radial-gradient(ellipse at bottom, rgba(202, 226, 253, 0.17) 0%, var(--bg-color) 45%);
-  box-shadow: inset -2px -2px 6px #353535, inset 4px 4px 6px #000000ab;
+  /* box-shadow: inset -2px -2px 6px #353535, inset 4px 4px 6px #000000ab; */
   transition: all 0.3s ease;
 }
 
@@ -133,7 +139,7 @@ header {
 .mbody {
   display: flex;
   gap: 1.5%;
-  height: 69vh;
+  height: 78vh;
   width: 94%;
   margin: 0px 2.9%;
   border-radius: 20px;
@@ -154,6 +160,7 @@ header {
   display: flex;
   flex-direction: column;
 }
+
 .textpart:hover {
   box-shadow: 4px 4px 10px #000, -4px -4px 10px #353535,
     inset -2px -2px 4px #353535, inset 2px 2px 10px #000;
@@ -165,7 +172,7 @@ header {
   position: relative;
   width: 20%;
   height: 100%;
-  padding: 2vh;
+  padding: 1.5vw;
   border-radius: inherit;
   /* border-left: 2px dotted   red; */
   /* border-right: 2px dotted aqua; */
@@ -176,8 +183,7 @@ header {
 
 .card {
   position: relative;
-  width: 100%;
-  max-width: 20rem;
+  width: 24vw;
   height: auto;
   /* background: lightgrey; */
   border-radius: 280px 45px 300px 300px;
@@ -360,7 +366,7 @@ header {
   margin-top: 2vw;
   margin-bottom: 40px;
   width: 100%;
-  height: 11rem;
+  height: 10vw;
   max-height: 9rem;
   min-height: 1vh;
   border: none;
@@ -404,7 +410,8 @@ legend {
 .home-content {
   display: flex;
   flex-direction: column;
-  gap: 8vh;
+  gap: 9vh;
+  height: 20rem;
 }
 
 .home-content h3 {
@@ -412,7 +419,7 @@ legend {
 }
 
 .home-content p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
   width: 100%;
@@ -471,7 +478,7 @@ legend {
   font-size: 3vw !important;
   font-weight: 600;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .text-animation span {
@@ -563,6 +570,138 @@ legend {
 
 
 
+
+
+
+
+
+/*################################################## Skill ######################################################*/
+.skill {
+  padding: 2rem;
+  background: var(--bg-color);
+  /* overflow: hidden; */
+  height: 100vh;
+  min-height: auto;
+  width: 98vw;
+  min-width: 140px;
+  margin-top: 2.3rem;
+  /* margin-left: 0.8rem; */
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px var(--shadow-lower), -2px -4px 6px var(--shadow-upper);
+  transition: all 0.6s ease;
+
+  display: grid;
+  /* grid-template-rows: 200px 200px 200px 100px;
+  grid-template-columns: 200px 200px 200px 100px; */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 3.5rem repeat(5, 1fr);
+  grid-template-areas:
+    " skillHead   skillHead   skillHead   skillHead   skillHead "
+    " css   css   .   .   . "
+    " css   css   .   .   . "
+    " css   css   .   .   . "
+    " css   css   .   .   . "
+
+  ;
+
+}
+
+.skill:hover {
+  box-shadow: 4px 4px 10px var(--shadow-lower), -4px -4px 6px var(--shadow-upper),
+    inset -2px -2px 4px var(--shadow-upper), inset 2px 2px 10px var(--shadow-lower);
+  transition: all 0.2s ease-in-out;
+}
+
+#skillHead {
+  grid-area: skillHead;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--navbtn-first-Txtcolor);
+  font-size: 2rem;
+  /* margin-top: 1rem; */
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  text-shadow:   -2px -2px 4px var(--shadow-upper), 2px 2px 10px var(--shadow-lower);
+}
+
+.css{
+  grid-area: css;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  padding-left: 17%;
+  border-radius: 1rem;
+  box-shadow:    -4px -4px 6px var(--shadow-upper), 2px 2px 10px var(--shadow-lower);
+}
+.progressbar{
+  width: 9.8rem;
+  height: 9.8rem;
+  border-radius: 100%;
+  border: 1rem solid var(--bg-color) ;
+  box-shadow:    -4px -4px 8px var(--shadow-upper), 2px 2px 10px var(--shadow-lower)
+                 ,
+                 inset -2px -2px 4px rgba(107, 106, 106, 0.496),inset 2px 2px 8px rgba(0, 0, 0, 0.538);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fa-brands{
+  font-size: 3rem;
+  text-shadow: -2px -2px 4px var(--shadow-upper), 2px 2px 10px var(--shadow-lower);
+
+}
+
+.fa-html5{
+  color: rgba(255, 85, 0, 0.749);
+}
+.fa-css3-alt{
+  color: rgb(57, 84, 220);
+}
+.fa-js{
+  color: rgb(201, 201, 34);
+}
+.fa-react{
+  color: aqua;
+}
+
+circle{
+  font-size: 1rem;
+  fill: none;
+  stroke: url(#GradientColor); 
+  stroke-width: 1rem;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 0;
+  box-shadow:    -6px -6px 8px var(--shadow-upper), 4px 4px 10px var(--shadow-lower)
+                 ,
+                 inset -2px -2px 4px rgba(107, 106, 106, 0.496),inset 2px 2px 8px rgba(0, 0, 0, 0.538);
+  
+}
+
+svg{
+  position: absolute;
+
+
+}
+/*============================================ Skill====================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .NavCntrl {
   visibility: hidden;
   display: none;
@@ -611,13 +750,14 @@ legend {
 
   .card {
     position: relative;
-  width: 100%;
-  min-width: 90px;
-  max-width:15rem;
-  height: auto;
+    width: 100%;
+    min-width: 90px;
+    max-width: 15rem;
+    height: auto;
   }
 
-  .logo-svg {/*Profile Image*/
+  .logo-svg {
+    /*Profile Image*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -632,32 +772,33 @@ legend {
     height: auto;
     font-size: 2vw;
   }
+
   /* __________________________---Profile Section End---___________________________ */
 
- .textpart {
+  .textpart {
     width: 100%;
-    height: 17rem !important;
+    height: 21rem !important;
     font-size: 1rem;
     border-radius: 0.5rem 6rem 0.5rem 0.5rem;
   }
 
-    /* Animation section */
-    .home-content {
-      font-size: 3vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      gap: 1rem;
-    }
-  
-    .home-content h3 {
-      font-size: 2vw;
-    }
-  
-    .home-content p {
-      font-size: 0.8rem;
+  /* Animation section */
+  .home-content {
+    font-size: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
 
-    }
+  .home-content h3 {
+    font-size: 2vw;
+  }
+
+  .home-content p {
+    font-size: 0.8rem;
+
+  }
 
   header {
     padding: 0.5rem;
@@ -713,7 +854,7 @@ legend {
     font-size: 0.38rem;
   }
 
-  #FirstBtn{
+  #FirstBtn {
     /* position: absolute;
     left: -63%;
     top: 0;
@@ -871,15 +1012,15 @@ legend {
   }
 
   .btn {
-    padding:8px;
-  font-size: 1.2vh;
-  color: rgb(161, 161, 161);
-  transition: 1000ms;
-  width: 4.5rem;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    padding: 8px;
+    font-size: 1.2vh;
+    color: rgb(161, 161, 161);
+    transition: 1000ms;
+    width: 4.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .btn-group {
@@ -890,14 +1031,7 @@ legend {
     margin-top: 0.7rem;
     width: 100%;
     height: 2.5rem;
+    gap: 8vw;
   }
 
 }
-
-
-
-
-
-
-
-
